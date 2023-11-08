@@ -25,4 +25,5 @@ https://core.telegram.org/bots/webapps
 <img width="619" alt="Screenshot 2023-11-07 at 3 46 46 PM" src="https://github.com/rostislavnagimov/webApp-to-do/assets/95563050/424c18ab-d346-4066-b11d-4317036c972e">
 <img width="626" alt="Screenshot 2023-11-07 at 3 46 55 PM" src="https://github.com/rostislavnagimov/webApp-to-do/assets/95563050/75658d8d-a76f-49dd-8041-de57e13a7c02">
 
-
+Создан бот t.me/webapp_testtask_bot
+Токен сохранен в окружении как BOT_TOKEN
