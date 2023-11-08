@@ -1,5 +1,4 @@
 // TelegramProvider
-import Script from "next/script";
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 
 export const TelegramContext = createContext({});
@@ -30,7 +29,7 @@ export const TelegramProvider = ({
   return (
     <TelegramContext.Provider value={value}>
       {/* Make sure to include script tag with "beforeInteractive" strategy to pre-load web-app script */}
-      <Script
+      <script
         src="https://telegram.org/js/telegram-web-app.js"
         strategy="beforeInteractive"
       />      {children}
