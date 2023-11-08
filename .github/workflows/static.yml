@@ -1,4 +1,4 @@
-name: Run Vite Application
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -6,19 +6,16 @@ on:
       - main
 
 jobs:
-  run_vite:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - name: Build
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          node-version: '14'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run Vite Application
-        run: npm run start
+          publish_dir: ./dist
