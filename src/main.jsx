@@ -5,7 +5,7 @@ import { useTelegram } from "../TelegramProvider";
 
 const App = () => {
   const { webApp } = useTelegram()
-  {webApp && webApp.expand()}
+  webApp && webApp.expand()
 
   return (
     <h1 style={{ height: '100vh' }}>Привет, мир!</h1>
