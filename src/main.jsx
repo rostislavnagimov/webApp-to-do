@@ -8,7 +8,7 @@ const App = () => {
   {webApp && webApp.expand()}
 
   return (
-    <h1>Привет, мир!</h1>
+    <h1 style={{ height: '100vh' }}>Привет, мир!</h1>
   );
 };
 
