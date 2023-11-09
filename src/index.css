@@ -107,6 +107,21 @@ li span {
   border-radius: 0 10px 10px 0;
   color: white;
 }
+
+li p {
+  margin: 0;
+}
+
 .lists p {
   text-align: center;
+  width: 100%
+}
+
+.list {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: aquamarine;
+  z-index: 4;
 }

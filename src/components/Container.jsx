@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 
+import { List } from './List'
+
 export const Container = () => {
   const [data, setData] = useState(JSON.parse(localStorage.getItem('lists')))
   const [form, setForm] = useState(false)
+  const [openList, setOpenList] = useState('')
 
   const createList = (name) => {
     if (data) {
@@ -30,6 +33,9 @@ export const Container = () => {
     <>
       <header>My Lists</header>
       <main>
+        {openList && (
+          <List data={openList} />
+        )}
         {form && 
           <div className='form' onClick={() => {setForm(false)}}>
             <div onClick={(e) => e.stopPropagation()}>
@@ -48,7 +54,10 @@ export const Container = () => {
           {(!data || data.length === 0) && <p>У вас еще нет созданных списков</p>}
             <ul>
               {data && data.map((list) => (
-                <li>{list.name} <span onClick={() => {deleteList(list.name)}}>X</span></li>
+                <li>
+                  <p onClick={() => {setOpenList(list.name)}}>{list.name}</p>
+                  <span onClick={() => {deleteList(list.name)}}>X</span>
+                </li>
               ))
               }
             </ul>
