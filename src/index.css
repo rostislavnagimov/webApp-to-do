@@ -134,10 +134,10 @@ li p {
   flex-direction: row;
   position: fixed;
   bottom: 0;
-  width: 100%;
+  width: 90%;
   max-width: 500px;
   height: 15vh;
-  margin: 5px;
+  margin: 5px auto;
   border-radius: 10px;
   color: white;
   font-size: 5vh;
@@ -153,14 +153,14 @@ li p {
 
 .checkbox {
   border-radius: 50%;
-  width: 20px;
-  height: 20px;
+  width: 5vh;
+  height: 5vh;
   border: 1px solid blueviolet;
 }
 
 .checkbox--checked {
   border-radius: 50%;
-  width: 20px;
-  height: 20px;
+  width: 5vh;
+  height: 5vh;
   background-color: blueviolet;
 }
