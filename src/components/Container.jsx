@@ -22,6 +22,18 @@ export const Container = () => {
     localStorage.setItem('lists', JSON.stringify(updated))
     setData(JSON.parse(localStorage.getItem('lists')))
   }
+
+  const updateList = (name, updatedTasks) => {
+    const updatedData = data.map(list => {
+      if (list.name === name) {
+        return { ...list, tasks: updatedTasks };
+      }
+      return list;
+    });
+  
+    localStorage.setItem('lists', JSON.stringify(updatedData));
+    setData(updatedData);
+  };
   
   if (document.getElementById('listName')) {
     document.getElementById('listName').addEventListener('focus', () => {
@@ -34,7 +46,7 @@ export const Container = () => {
       <header>My Lists</header>
       <main>
         {openList && (
-          <List data={openList} />
+          <List name={openList} updateTask={updateList} />
         )}
         {form && 
           <div className='form' onClick={() => {setForm(false)}}>
@@ -56,7 +68,7 @@ export const Container = () => {
               {data && data.map((list) => (
                 <li>
                   <p onClick={() => {setOpenList(list.name)}}>{list.name}</p>
-                  <span onClick={() => {deleteList(list.name)}}>X</span>
+                  <span className="cross" onClick={() => {deleteList(list.name)}}>X</span>
                 </li>
               ))
               }
