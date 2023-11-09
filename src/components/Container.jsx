@@ -19,7 +19,12 @@ export const Container = () => {
     localStorage.setItem('lists', JSON.stringify(updated))
     setData(JSON.parse(localStorage.getItem('lists')))
   }
-  console.log(data)
+  
+  if (document.getElementById('listName')) {
+    document.getElementById('listName').addEventListener('focus', () => {
+      window.scrollTo(0, 0)
+    })
+  }
 
   return (
     <>
@@ -31,6 +36,7 @@ export const Container = () => {
               <label>Название списка</label>
               <input type="text" id="listName"></input>
               <button
+                className="button__create"
                 onClick = {() => {createList(document.getElementById('listName').value); setForm(false)}}
               >
                 Создать
@@ -47,7 +53,7 @@ export const Container = () => {
               }
             </ul>
         </div>
-        <button onClick={() => {setForm(true)}}>Добавить новый список</button>
+        <button className="button__add" onClick={() => {setForm(true)}}>Добавить новый список</button>
       </main>
     </>
   )
